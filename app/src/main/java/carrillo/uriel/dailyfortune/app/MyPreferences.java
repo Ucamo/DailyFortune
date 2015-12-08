@@ -2,6 +2,24 @@ package carrillo.uriel.dailyfortune.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+import carrillo.uriel.dailyfortune.ConnectionDetector;
+import carrillo.uriel.dailyfortune.FortuneActivity;
 
 /**
  * Created by jose.canseco on 08/12/2015.
@@ -34,7 +52,9 @@ public class MyPreferences {
         return pref.getString(UserName,"");
     }
     public void setUserName(String name){
-        editor.putString(UserName,name);
+        editor.putString(UserName, name);
         editor.commit();
     }
+
+
 }

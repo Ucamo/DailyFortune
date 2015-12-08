@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
     }
 
     public void SaveUsername(View v){
-        EditText usrName=(EditText)findViewById(R.id.editText1);
+        EditText usrName=(EditText)findViewById(R.id.editText);
         MyPreferences pref = new MyPreferences(MainActivity.this);
         pref.setUserName(usrName.getText().toString().trim());
         Intent i = new Intent(getApplicationContext(),FortuneActivity.class);
@@ -56,4 +56,6 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
